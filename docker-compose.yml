@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  web:
+    container_name: flask
+    build: ./services/web
+    command: python3 manage.py run -h 0.0.0.0
+    volumes:
+      - ./services/web/:/usr/src/app/
+    ports:
+      - 5000:5000
+    env_file:
+      - ./.env.dev
+    depends_on:
+      - db
+  db:
+    image: kartoza/postgis:12.0
+    container_name: postgis
+    volumes:
+      - ./dbexport.pgsql:/docker-entrypoint-initdb.d/setup-db.sql
+    environment:
+      - POSTGRES_USER=geo
+      - POSTGRES_PASSWORD=geo
+      - POSTGRES_DBNAME=gis
+    ports:
+      - 5432:5432
