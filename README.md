@@ -60,3 +60,7 @@ If you submit a request before the PostgreSQL database is ready to accept a conn
 > **Docker Compose encounters and ERROR with the flask container**
 
 The app should still function, this could depend on your network timeout settings.
+
+> **aufs Error when trying to mount volume**
+
+This can happen when using the app in a Live-disk Linux VM. Use a fully installed OS instead.
