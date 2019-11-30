@@ -22,14 +22,22 @@ Postman is the recommended method for interacting with this app.
 
 The Flask server is running on ```localhost:5000```.
 
+---
+
 Both GET and POST requests are accepted. If accessing through Postman and a POST request, change "Body" to "raw" and select "JSON (application/json)" as the type.
+
+---
 
 The required payload parameters are:
   * key - a Google API access key
   * address - an address
-  
+
+---
+
 ### POST Example
 ![POST example](https://github.com/reschlegel/geo/blob/master/examples/POST%20example.png)
+
+---
 
 ### GET Example
 ![GET example](https://github.com/reschlegel/geo/blob/master/examples/GET%20example.png)
@@ -47,7 +55,7 @@ To stop the containers run: ```docker-compose down```
 # Common problems
 > **I am not receiving a response**
 
-If you submit q request before the PostgreSQL database is ready to accept a connection, you might end up with a hanging request. If this occurs wait 30 seconds and try again.
+If you submit a request before the PostgreSQL database is ready to accept a connection, you might end up with a hanging request. If this occurs wait 30 seconds and try again.
 
 > **Docker Compose encounters and ERROR with the flask container**
 
